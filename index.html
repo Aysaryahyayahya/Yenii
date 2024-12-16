@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-content" class="center">
+        <h1>Welcome to our survey</h1>
+        <div id="survey-start">
+            <button onclick="startSurvey()">Yes</button>
+            <button onclick="closeSurvey()">No</button>
+        </div>
+    </div>
+
+    <div id="questionnaire" class="hidden">
+        <div id="question1" class="question">
+            <h2>What is your gender?</h2>
+            <button onclick="answerGender('male')">Male</button>
+            <button onclick="answerGender('female')">Female</button>
+        </div>
+        
+        <div id="question2" class="question hidden">
+            <h2>What is your age group?</h2>
+            <button onclick="answerAge('18-30')">18-30</button>
+            <button onclick="answerAge('31-45')">31-45</button>
+            <button onclick="answerAge('46-60')">46-60</button>
+            <button onclick="answerAge('61+')">61+</button>
+        </div>
+
+        <div id="continue" class="hidden">
+            <button onclick="showPage()">Continue</button>
+        </div>
+    </div>
+
+    <div id="company-pages" class="hidden">
+        <div class="page" id="trendol" style="background-color: orange;">
+            <h2>Trendol</h2>
+        </div>
+        <div class="page" id="anatolia" style="background-color: red;">
+            <h2>Anatolia</h2>
+        </div>
+        <div class="page" id="ghazi" style="background-color: blue;">
+            <h2>Ghazi</h2>
+        </div>
+        <div class="page" id="restaurant" style="background-color: green;">
+            <h2>Restaurant</h2>
+        </div>
+    </div>
+
+    <div id="cookie-consent" class="hidden">
+        <h2>Cookie consent</h2>
+        <button onclick="acceptCookies()">Accept</button>
+        <button onclick="rejectCookies()">Reject</button>
+        <button onclick="manageCookies()">Manage</button>
+    </div>
+	
+	<div id="likert-scale" class="hidden">
+    <h2>Please indicate your agreement with the following statements:</h2>
+    <form id="likert-form">
+        <div class="likert-question">
+            <p>1. I find this website trustworthy.</p>
+            <div class="likert-options">
+                <label><input type="radio" name="q1" value="1"> 1</label>
+                <label><input type="radio" name="q1" value="2"> 2</label>
+                <label><input type="radio" name="q1" value="3"> 3</label>
+                <label><input type="radio" name="q1" value="4"> 4</label>
+                <label><input type="radio" name="q1" value="5"> 5</label>
+                <label><input type="radio" name="q1" value="6"> 6</label>
+                <label><input type="radio" name="q1" value="7"> 7</label>
+            </div>
+        </div>
+
+        <div class="likert-question">
+            <p>2. I feel safe sharing my personal data on this site.</p>
+            <div class="likert-options">
+                <label><input type="radio" name="q2" value="1"> 1</label>
+                <label><input type="radio" name="q2" value="2"> 2</label>
+                <label><input type="radio" name="q2" value="3"> 3</label>
+                <label><input type="radio" name="q2" value="4"> 4</label>
+                <label><input type="radio" name="q2" value="5"> 5</label>
+                <label><input type="radio" name="q2" value="6"> 6</label>
+                <label><input type="radio" name="q2" value="7"> 7</label>
+            </div>
+        </div>
+
+        <div class="likert-question">
+            <p>3. I believe this website respects my privacy.</p>
+            <div class="likert-options">
+                <label><input type="radio" name="q3" value="1"> 1</label>
+                <label><input type="radio" name="q3" value="2"> 2</label>
+                <label><input type="radio" name="q3" value="3"> 3</label>
+                <label><input type="radio" name="q3" value="4"> 4</label>
+                <label><input type="radio" name="q3" value="5"> 5</label>
+                <label><input type="radio" name="q3" value="6"> 6</label>
+                <label><input type="radio" name="q3" value="7"> 7</label>
+            </div>
+        </div>
+
+        <div class="likert-question">
+            <p>4. I find the cookie consent options clear and easy to understand.</p>
+            <div class="likert-options">
+                <label><input type="radio" name="q4" value="1"> 1</label>
+                <label><input type="radio" name="q4" value="2"> 2</label>
+                <label><input type="radio" name="q4" value="3"> 3</label>
+                <label><input type="radio" name="q4" value="4"> 4</label>
+                <label><input type="radio" name="q4" value="5"> 5</label>
+                <label><input type="radio" name="q4" value="6"> 6</label>
+                <label><input type="radio" name="q4" value="7"> 7</label>
+            </div>
+        </div>
+
+        <div class="likert-question">
+            <p>5. I believe that my data will not be misused on this site.</p>
+            <div class="likert-options">
+                <label><input type="radio" name="q5" value="1"> 1</label>
+                <label><input type="radio" name="q5" value="2"> 2</label>
+                <label><input type="radio" name="q5" value="3"> 3</label>
+                <label><input type="radio" name="q5" value="4"> 4</label>
+                <label><input type="radio" name="q5" value="5"> 5</label>
+                <label><input type="radio" name="q5" value="6"> 6</label>
+                <label><input type="radio" name="q5" value="7"> 7</label>
+            </div>
+        </div>
+
+        <button type="button" onclick="submitLikert()">Submit Likert Responses</button>
+    </form>
+</div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
